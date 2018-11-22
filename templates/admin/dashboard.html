@@ -1,0 +1,83 @@
+{% extends "admin/dash_theme.html" %}
+<!--
+-->
+{% block head_section %}
+<title>Dashboard</title>
+{% endblock %}
+<!-- -->
+{% block page_title %}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 containerTitleBar">
+        <span id="containerTitleBarName">Dashboard</span>       
+    </div>
+</div>
+
+
+{% endblock %}
+<!--
+-->
+{% block main_div %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bodyStart">
+
+    <script>
+        window.location.assign("stock-categories");
+    </script>
+                <div class="row cs">
+                        <div class="col-md-3">
+                            <div class="col-sm-12 card">
+                                <div id="titleCard">USERS</div>
+                                <div id="innerData1">45</div>
+                                <hr>
+                                <div id="innerSubData11">tyu</div>
+                                <hr>
+                                <div id="innerSubData12">tyui</div>
+                            </div>
+                        </div>
+                       
+                        
+
+                         <div class="col-md-3">
+                           <div class="col-sm-12 card">
+                                <div id="titleCard">PRODUCTS</div>
+                                <div id="innerData3">5</div>
+                                
+                           </div>
+                        </div> 
+                        <div class="col-md-3">
+                            <div class="col-sm-12 card">
+                                <div id="titleCard">ORDERS</div>
+                                <div id="innerData2">5</div>
+                                <hr>
+                                <div id="innerSubData21">fgh</div>
+                                <hr>
+                                <div id="innerSubData22">lkj</div>
+                            </div>
+                        </div> 
+
+                        <div class="col-md-3">
+                            <div class="col-sm-12 card">
+                                <div id="titleCard">EMAIL / SMS</div>
+                                <div id="innerData4">85</div>
+                                <hr>
+                                <div id="innerSubData41">ghj</div>
+                                <hr>
+                                <div id="innerSubData42">ghj</div>
+                            </div>
+                        </div>      
+                    </div>
+
+      
+</div>
+{% endblock %}
+<!-- 
+
+-->
+{% block style_div %}
+
+  
+        <link rel="stylesheet" type="text/css" href="../static/admin/css/dashPage.css">
+
+    <script src="../static/admin/js/dashboard.js"></script>  
+    
+{% endblock %}

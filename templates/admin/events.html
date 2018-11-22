@@ -1,0 +1,83 @@
+{% extends "admin/dash_theme.html" %}
+<!--
+-->
+{% block head_section %}
+<title>Events</title>
+{% endblock %}
+<!-- -->
+{% block page_title %}
+<div class="row">
+    <div class="col-md-12 containerTitleBar">
+        <span id="containerTitleBarName">Events</span>
+        <span id="titleBarMenu"><span id="containerTitleBarNew" onclick="m1()"> <i class="fa fa-file"> </i> View Events</span></div>
+    </div>
+
+</div>
+{% endblock %}
+<!--
+-->
+{% block main_div %}
+<div class="col-md-offset-3 col-md-6 card" id="bodyStart">
+    <br>
+    <div id="cont2" style="display: none">
+        
+    </div>
+    <div id="mainContents">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">Event title</label>
+              <input type="text" class="form-control" id="evtTtl" >
+              <div class="errorNotif" id="evtTtlError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">Description</label>
+              <textarea class="form-control" id="evtDesc" style="resize: none; min-height: 100px;"></textarea>
+              <div class="errorNotif" id="evtDescError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">Date</label>
+              <input type="button" name="dobBtn" class="form-control" data-toggle="datepicker" id="dobBtn" value="">
+              <div class="errorNotif" id="evtDateError"></div>
+            </div>
+        </div>
+    </div>
+   <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">Photos</label><p>
+              <input type="file" accept="image/*" class="form-control" id="in1" size=46>
+              <p><div class="errorNotif" id="evtPhotosError" style="margin-top: -7px;"></div>
+              <p><div align="right"><input type="button" id="addIn" size=46 value="Add More" ><br><br></div>
+              
+            </div>
+        </div>
+    </div>
+    <div class="row" align="right">
+        <button id="submitUpdate" class="btn btn-teal" onclick=submitEvent() style="margin: 0px 15px">Submit</button>
+    </div>
+
+    </div>
+    <br>
+
+
+</div>
+{% endblock %}
+<!-- 
+
+-->
+{% block style_div %}
+    <link rel="stylesheet" type="text/css" href="../static/admin/css/events.css">
+    <script src="../static/admin/js/events.js"></script> 
+
+    <script src="../static/admin/js/datepicker.min.js"></script>
+    <link rel="stylesheet" href="../static/admin/css/datepicker.min.css">
+{% endblock %}

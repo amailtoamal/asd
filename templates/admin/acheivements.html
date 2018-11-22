@@ -1,0 +1,122 @@
+{% extends "admin/dash_theme.html" %}
+<!--
+-->
+{% block head_section %}
+<title>Achievements</title>
+{% endblock %}
+<!-- -->  
+{% block page_title %}
+<div class="row">
+    <div class="col-md-12 containerTitleBar">
+        <span id="containerTitleBarName">Achievements</span>
+        <span id="titleBarMenu"><span id="containerTitleBarNew" onclick="m1()"> <i class="fa fa-file"> </i> List All</span></div>
+    </div>
+
+</div>
+{% endblock %}
+<!--
+-->
+{% block main_div %}
+<div class="col-md-offset-1 col-md-10 card" id="bodyStart">
+    <br>
+    <div id="cont2" style="display: none">
+        
+    </div>
+    <div id="mainContents">
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="pname">Program Name</label>
+              <input type="text" class="form-control" id="pname" >
+              <div class="errorNotif" id="pnameError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label for="ename">Event Name</label>
+              <input type="text" class="form-control" id="ename" >
+              <div class="errorNotif" id="enameError"></div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label for="etype">Event Type</label>
+              <input type="text" class="form-control" id="etype" >
+              <div class="errorNotif" id="etypeError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label for="ecat">Category</label>
+              <input type="text" class="form-control" id="ecat" >
+              <div class="errorNotif" id="ecatError"></div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label for="eprize">Prize</label>
+              <input type="text" class="form-control" id="eprize" >
+              <div class="errorNotif" id="eprizeError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label for="evenue">Venue</label>
+              <input type="text" class="form-control" id="evenue" >
+              <div class="errorNotif" id="evenueError"></div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name">Date</label>
+              <input type="button" name="dobBtn" class="form-control" data-toggle="datepicker" id="edate" value="">
+              <div class="errorNotif" id="edateError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">Remarks</label>
+              <textarea class="form-control" id="eremarks" style="resize: none; min-height: 100px;"></textarea>
+              <div class="errorNotif" id="eremarksError"></div>
+            </div>
+        </div>
+    </div>
+   <div class="row">
+    <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">WINNERS NAME</label>
+              <input type="text" class="form-control" id="nm1" >
+              <div class="errorNotif" id="wnameError"></div>
+               <p><div align="right"><input type="button" id="addIn" size=46 value="Add More" ><br><br></div> 
+            </div>
+        </div>
+       
+    </div>
+    <div class="row" align="right">
+        <button id="submitUpdate" class="btn btn-teal" onclick=submit() style="margin: 0px 15px">Submit</button>
+    </div>
+  </div>
+    <br>
+
+
+</div>
+{% endblock %}
+<!-- 
+
+-->
+{% block style_div %}
+    <link rel="stylesheet" type="text/css" href="../static/admin/css/acheivements.css">
+    <script src="../static/admin/js/acheivements.js"></script> 
+
+    <script src="../static/admin/js/datepicker.min.js"></script>
+    <link rel="stylesheet" href="../static/admin/css/datepicker.min.css">
+{% endblock %}

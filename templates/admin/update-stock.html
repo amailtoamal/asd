@@ -1,0 +1,92 @@
+{% extends "admin/dash_theme.html" %}
+<!--
+-->
+{% block head_section %}
+<title>Update Stock</title>
+{% endblock %}
+<!-- -->
+{% block page_title %}
+<div class="row">
+    <div class="col-md-12 containerTitleBar">
+        <span id="containerTitleBarName">Update Stock</span>
+
+    </div>
+
+</div>
+{% endblock %}
+<!--
+-->
+{% block main_div %}
+<div class="col-md-offset-3 col-md-6 card" id="bodyStart">
+    <br>
+    <div class="row">
+        <div class="col-sm-12">                           
+            <div class="form-group">
+              <label for="name">Product category</label>
+              <select class="form-control" id="productListText">
+              </select>
+              <div class="errorNotif" id="namePdtError"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">Received from</label>
+              <input type="text" class="form-control" id="rcvdFrm" >
+              <div class="errorNotif" id="rcvdFrmError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">invoice number</label>
+              <input type="text" class="form-control" id="invno" >
+              <div class="errorNotif" id="invnoError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name">rate</label>
+              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57 ||event.charCode == 46"  class="form-control" id="rate" >
+              <div class="errorNotif" id="rateError"></div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name">Quantity</label>
+              <input type="number" class="form-control" id="qty" >
+              <div class="errorNotif" id="qtyError"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <label for="name">Remarks</label><p>
+              <textarea class="form-control" id="remarks" style="resize: none; min-height: 100px;"></textarea>
+              <div class="errorNotif" id="remarksError" style="margin-top: -7px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row" align="right">
+        <button id="submitUpdate" class="btn btn-teal" onclick=submitUpdate() style="margin: 0px 15px">Submit</button>
+    </div>
+    <br>
+
+
+</div>
+{% endblock %}
+<!-- 
+
+-->
+{% block style_div %}
+    <link rel="stylesheet" type="text/css" href="../static/admin/css/update-stock.css">
+    <script src="../static/admin/js/update-stock.js"></script> 
+{% endblock %}

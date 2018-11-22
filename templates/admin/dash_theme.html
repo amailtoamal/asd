@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="../static/admin/images/icons/favicon.ico" />
+   {% block head_section %} {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="../static/admin/js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/admin/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/admin/css/font-awesome.css" />
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/admin/css/menu.css" />
+    <script src="../static/admin/js/menu.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/admin/css/baseStyle.css" />
+    <script src="../static/admin/js/baseScript.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/admin/css/dashboard.css" />
+    <script src="../static/admin/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div id="screenMask"></div>
+    <div id="titleBar">
+        <i class="fa fa-bars" id="toggeleMenu"></i>
+        <div id="companyName">Final Whistle</div>
+        <div id="userIcon"> </div>
+    </div>
+    <div id="profilePopUp">
+        <input type="button" value="Logout" id="logoutBtn">
+    </div>
+    <div id="navMenu">
+        <div id='cssmenu'>
+            <ul>
+                <p>
+                    <p>
+                        <!-- <li><a href='/admin/dashboard'>Dashboard</a></li> -->
+                       <!-- <li class=''><a href='/admin/user-management'>Users</a></li> -->
+
+
+                        <li>
+                            <div id='divTitle'>INVENTORY MANAGEMENT</div>
+                        </li>
+                        <li class=''><a href='/admin/stock-categories'>Stock Categories</a></li>
+                        <li class=''><a href='/admin/update-stock'>Update Stock</a></li>
+                        <li class=''><a href='/admin/stock-report'>Stock Report</a></li>
+
+                        <li>
+                            <div id='divTitle'>RECEIPTS AND VOUCHERS</div>
+                        </li>
+                        <li class=''><a href='/admin/receipts'>Receipts</a></li>
+                        <li class=''><a href='/admin/vouchers'>Vouchers</a></li>
+
+                        <li>
+                            <div id='divTitle'>WEBSITE MANAGEMENT</div>
+                        </li>
+                        <li class=''><a href='/admin/events'>Events</a></li>
+                        <li class=''><a href='/admin/photos'>Photos</a></li>
+                        <li class=''><a href='/admin/alumni'>Alumni</a></li>
+                        <li class=''><a href='/admin/acheivements'>Achievements</a></li>
+                        
+
+
+            </ul>
+        </div>
+    </div>
+    <div id="contentArea">
+        <div class="container-fluid">
+            {% block page_title %} {% endblock %}
+            <div id="cardDiv"></div>
+            <div class="row contentDiv1">
+                {% block main_div %} {% endblock %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="users-device-size">
+        <div id="xs" class="visible-xs"></div>
+        <div id="sm" class="visible-sm"></div>
+        <div id="md" class="visible-md"></div>
+        <div id="lg" class="visible-lg"></div>
+    </div>
+    
+<div id="snackbar">Some text some message..</div>
+
+{% block style_div %} {% endblock %}
+</body>
+
+</html>

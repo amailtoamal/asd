@@ -1,0 +1,129 @@
+{% extends "admin/dash_theme.html" %}
+<!--
+-->
+
+{% block page_title %}{% block head_section %}
+<title>Vouchers</title>
+{% endblock %}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 containerTitleBar">
+        <span id="containerTitleBarName">Vouchers</span>
+        <span id="containerTitleBarNew" data-toggle="modal" data-target="#myModal"> <i class="fa fa-file"> </i> NEW</span>
+       
+    </div>
+</div>
+
+
+{% endblock %}
+<!--
+-->
+{% block main_div %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card" id="bodyStart">
+
+
+
+        <div class="col-sm-12">
+            <br>
+           
+            <div id="tableArea"></div><br>
+        </div>     
+
+
+        <div class="modal fade" id="myModal" role="dialog" style="margin-top: 30px;">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" style="font-variant: uppercase;">Vouchers</h4><br>
+
+                  
+                        <div class="row">
+                            <div class="col-sm-12">                           
+                                <div class="form-group">
+                                  <label for="item">Item</label>
+                                  <input type="text" class="form-control" id="item" >
+                                  <div class="errorNotif" id="itemError"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">                           
+                                <div class="form-group">
+                                  <label for="item">Voucher Number</label>
+                                  <input type="text" class="form-control" id="vno" >
+                                  <div class="errorNotif" id="vnoError"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">                           
+                                <div class="form-group">
+                                      <label for="name">Date</label>
+                                      <input type="button" name="dobBtn" class="form-control" data-toggle="datepicker" id="date" value="">
+                                      <div class="errorNotif" id="dateError"></div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">                           
+                                <div class="form-group">
+                                  <label for="item">Amount</label>
+                                  <input type="text" class="form-control" id="amount" onkeypress="return event.charCode >= 48 && event.charCode <= 57 ||event.charCode == 46" >
+                                  <div class="errorNotif" id="amountError"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">                           
+                                <div class="form-group">
+                                  <label for="item">Paid to</label>
+                                  <input type="text" class="form-control" id="pto" >
+                                  <div class="errorNotif" id="ptoError"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">                           
+                                <div class="form-group">
+                                  <label for="item">Purpose</label>
+                                  <input type="text" class="form-control" id="purpose" >
+                                  <div class="errorNotif" id="purposeError"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                               <div class="form-group">
+                                  <label for="name">remarks</label><p>
+                                  <textarea class="form-control" id="remarks" style="resize: none; min-height: 100px;"></textarea>
+                                  <div class="errorNotif" id="remarksError" style="margin-top: -7px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                  <div  align="right"> 
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-teal" id="submit">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    {% endblock %}
+    <!-- 
+
+-->
+{% block style_div %}
+
+    <link rel="stylesheet" type="text/css" href="../static/admin/datatables/datatables.min.css">
+    <script src="../static/admin/datatables/datatables.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../static/admin/css/vouchers.css">
+    <script src="../static/admin/js/vouchers.js"></script>  
+
+     <script src="../static/admin/js/datepicker.min.js"></script>
+    <link rel="stylesheet" href="../static/admin/css/datepicker.min.css">
+{% endblock %}

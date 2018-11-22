@@ -1,0 +1,164 @@
+{% extends "admin/dash_theme.html" %}
+<!--
+-->
+{% block head_section %}
+<title>Stock Categories</title>
+{% endblock %}
+<!-- -->
+{% block page_title %}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 containerTitleBar">
+        <span id="containerTitleBarName">Stock Categories</span>
+        <span id="containerTitleBarNew" data-toggle="modal" data-target="#myModal"> <i class="fa fa-file"> </i> NEW</span>
+       
+    </div>
+</div>
+
+
+{% endblock %}
+<!--
+-->
+{% block main_div %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card" id="bodyStart">
+
+
+
+        <div class="col-sm-12">
+            <br>
+           
+            <div id="tableArea"></div><br>
+        </div>     
+
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" style="font-variant: uppercase;">New Category</h4><br>
+
+                  
+                        <div class="row">
+                            <div class="col-sm-12">                           
+                                <div class="form-group">
+                                  <label for="name">Name</label>
+                                  <input type="text" class="form-control" id="name" >
+                                  <div class="errorNotif" id="nameError"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                               <div class="form-group">
+                                  <label for="name">Description</label><p>
+                                  <textarea class="form-control" id="desc" style="resize: none; min-height: 100px;"></textarea>
+                                  <div class="errorNotif" id="descError" style="margin-top: -7px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                  <div  align="right"> 
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-teal" id="submitCategory">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" style="font-variant: uppercase;">Confirm delete</h4><br>
+
+                  Are you sure want to delete? <br><br>
+                  
+                  <div  align="right"> 
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-teal" onclick="deleteCatConfirm()">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      
+    </div>
+
+     <div class="modal fade" id="myModal3" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" style="font-variant: uppercase;">Edit</h4><br>
+                     <div id="editData">
+                         
+
+                         <div class="row">
+                            <div class="col-sm-12">                           
+                                <div class="form-group">
+                                  <label for="name">Name</label>
+                                  <input type="text" class="form-control" id="nameEdit">
+                                  <div class="errorNotif" id="nameEditError"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                               <div class="form-group">
+                                  <label for="name">Description</label><p>
+                                  <textarea class="form-control" id="descEdit" style="resize: none; min-height: 100px;"></textarea>
+                                  <div class="errorNotif" id="descEditError" style="margin-top: -7px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="row">
+                            <div class="col-sm-12">                           
+                                <div class="form-group">
+                                  <label for="name">Status</label>
+                                    <div>
+                                        Ongoing <input type="radio" value=1 id=stat0 name=status>&nbsp;&nbsp;&nbsp;&nbsp;                                    
+                                        Discontinue <input type="radio" value=0 id=stat1 name=status>
+                                    </div>
+                                  <div class="errorNotif" id="checkEditError"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+
+
+
+
+                     </div>
+                  <div  align="right"> 
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-teal" onclick="saveEditCat()">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      
+    </div>
+
+
+
+
+    {% endblock %}
+    <!-- 
+
+-->
+{% block style_div %}
+
+    <link rel="stylesheet" type="text/css" href="../static/admin/datatables/datatables.min.css">
+    <script src="../static/admin/datatables/datatables.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../static/admin/css/stock-categories.css">
+    <script src="../static/admin/js/stock-categories.js"></script>  
+{% endblock %}

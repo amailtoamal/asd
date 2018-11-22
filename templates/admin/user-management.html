@@ -1,0 +1,54 @@
+{% extends "admin/dash_theme.html" %}
+<!--
+-->
+{% block page_title %}
+<div class="row">
+    <div class="col-md-12 containerTitleBar">
+        <span id="containerTitleBarName">Stock Categories</span>
+
+    </div>
+
+</div>
+{% endblock %}
+<!--
+-->
+{% block main_div %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card" id="bodyStart">
+
+
+
+    <div class="col-sm-12">
+        <br>
+        <table id="table_id" class="display">
+            <thead>
+                <tr>
+                    <th>Sl. No.</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+    {% endblock %}
+    <!-- 
+
+-->
+    {% block style_div %}
+
+    <link rel="stylesheet" type="text/css" href="../static/admin/datatables/datatables.min.css">
+    <script src="../static/admin/datatables/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable();
+        });
+    </script>
+  
+    {% endblock %}
